@@ -1,0 +1,5 @@
+config BR2_PACKAGE_NIGHT
+	bool "night"
+	help
+	  Includes the night executable in the kernel image.
+	  Used to understand buildroot external trees and package builds.

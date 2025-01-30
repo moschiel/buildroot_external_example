@@ -1,0 +1,5 @@
+config BR2_PACKAGE_MORNING
+	bool "morning"
+	help
+	  Includes the morning executable in the kernel image.
+	  Used to understand buildroot external trees and package builds.
