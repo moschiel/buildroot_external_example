@@ -50,14 +50,14 @@ To use this external repository with Buildroot:
    git submodule update --init
    ```
    
-   The next steps (2 to 4) are for creating your external custom configuration (defconfig)
+   The next steps (2 to 3) are for creating your external custom configuration (defconfig)
 
    If you already have a external custom configuration (defconfig) that you want to use, do the following:
    - place the defconfig file in `extern/configs`
-   - in `variables.sh`, update the parameter `CUSTOM_DEFCONFIG_NAME` with the defconfig name
-   - go to step 5
+   - in `variables.sh`, update the parameter `CUSTOM_DEFCONFIG_NAME` with the defconfig file name
+   - go to step 4
 
-3. **Set up the default predefined configuration**
+2. **Set up the default predefined configuration**
    
    Buildroot supplies many predefined configurations (defconfigs)
    
@@ -76,11 +76,11 @@ To use this external repository with Buildroot:
    ```
    Now buildroot applied the configuration using the defconfig set in `DEFAULT_DEFCONFIG_NAME` from `variables.sh`.
    
-   You could go to step 7 now if you want to build with the default defconfig, but what is the fun in just using a default configuration right?
+   You could go to step 6 now if you want to build with the default defconfig, but what is the fun in just using a default configuration right?
    
-4. **Customize the configuration and Save your own defconfig externally**:
+3. **Customize the configuration and Save your own defconfig externally**:
    - Run `menuconfig.sh` to modify settings as needed.
-   - Select `External options`, then select our custom external packages,
+   - If you want to add our custom external packages (available in `extern/package`), select `External options`, then select our custom external packages,
      
     ![image](https://github.com/user-attachments/assets/72e369d6-74f4-406f-aa10-ead340d83366)
 
@@ -90,7 +90,7 @@ To use this external repository with Buildroot:
      ```
      This saves the configuration externally in `extern/configs` with the name set in `CUSTOM_DEFCONFIG_NAME` from `variables.sh`. If you want to save it with another name, just change `CUSTOM_DEFCONFIG_NAME` value.
 
-5. **Verify that Buildroot recognizes the external configuration you just saved**:
+4. **Verify that Buildroot recognizes the external configuration**:
    ```bash
    make -C buildroot/ list-defconfigs
    ```
@@ -99,19 +99,19 @@ To use this external repository with Buildroot:
     ![image](https://github.com/user-attachments/assets/76d633f6-556e-467f-a28e-c877949dbc55)
 
 
-7. **Set buildroot to use the external configuration**:
+5. **Set buildroot to use the external configuration**:
    ```bash
    ./set_custom_defconfig.sh
    ```
    Now buildroot applied your external custom configuration defined in `variables.sh`, in parameter `CUSTOM_DEFCONFIG_NAME`.
 
-8. **Build the system**:
+6. **Build the system**:
    ```bash
    make -C buildroot
    ```
    This is going to take several minutes if it is the first build for the selected defconfig.
 
-9. **Run the built system**:
+7. **Run the built system**:
    - If using **QEMU**:
      ```bash
      ./runqemu.sh
