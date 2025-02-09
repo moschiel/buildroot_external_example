@@ -28,7 +28,6 @@ This repository includes:
 
 ✅ The ability to generate a Linux image containing these applications pre-installed.
 
-✅ Support for multiple platforms, including **QEMU and Raspberry Pi**.
 
 ## Directory Structure
 
