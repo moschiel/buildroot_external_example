@@ -1,8 +1,8 @@
 # Buildroot External Example
 
-This repository serves as an example of how to set up an external repository for Buildroot.
+This repository serves as an example of how to set up an external tree for Buildroot.
 
-## Why Use an External Repository?
+## Why Use an External Tree?
 
 When working with Buildroot, it's a good practice to keep custom configurations and packages separate from the Buildroot source tree. This approach ensures:
 - **Decoupling:** Customizations are maintained independently, making it easier to update Buildroot without conflicts.
