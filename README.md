@@ -20,7 +20,7 @@ Buildroot allows you to embed your own packages into a custom Linux image. Inste
 
 This repository includes:
 
-✅ Three external repositories with different applications (`morning`, `afternoon`, `night`).
+✅ Three external repositories with different applications ([morning](https://github.com/moschiel/good_morning_app_example), [afternoon](https://github.com/moschiel/good_afternoon_app_example), [night](https://github.com/moschiel/good_night_app_example)).
 
 ✅ Buildroot configuration to fetch and compile these applications automatically.
 
