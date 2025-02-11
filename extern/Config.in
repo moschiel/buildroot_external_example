@@ -1,3 +1,4 @@
 source "$BR2_EXTERNAL_ROGER_TUTORIAL_PATH/package/morning/Config.in"
 source "$BR2_EXTERNAL_ROGER_TUTORIAL_PATH/package/afternoon/Config.in"
 source "$BR2_EXTERNAL_ROGER_TUTORIAL_PATH/package/night/Config.in"
+source "$BR2_EXTERNAL_ROGER_TUTORIAL_PATH/package/simple_stream_server/Config.in"

@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd buildroot
-make menuconfig
+make menuconfig BR2_EXTERNAL=../extern

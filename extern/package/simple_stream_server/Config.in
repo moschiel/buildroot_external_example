@@ -1,0 +1,21 @@
+config BR2_PACKAGE_SIMPLE_STREAM_SERVER
+    bool "simple_stream_server"
+    help
+      Includes the 'simple_stream_server' executable at '/usr/bin/'.
+      Used to understand Buildroot external trees and package builds.
+
+config BR2_PACKAGE_SIMPLE_STREAM_SERVER_INIT
+    bool "Start 'simple_stream_server' automatically on boot"
+    depends on BR2_PACKAGE_SIMPLE_STREAM_SERVER
+    help
+      If enabled, the 'simple_stream_server' will be registered in '/etc/init.d/'
+      and started automatically on boot using BusyBox init.
+
+config BR2_PACKAGE_SIMPLE_STREAM_SERVER_INIT_PRIORITY
+    int "Startup priority (SXX)"
+    depends on BR2_PACKAGE_SIMPLE_STREAM_SERVER_INIT
+    default 99
+    help
+      Defines the startup priority number (SXX) of the init.d script.
+      A lower number starts earlier; a higher number starts later.
+      Default is 99.

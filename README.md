@@ -34,11 +34,14 @@ This repository includes:
 - `extern/`: Contains external configurations and package definitions.
 - `buildroot/`: Submodule of the Buildroot build system.
 - `clear_build.sh`: Script to clean the build directory.
-- `runqemu.sh`: Script to run the built system in QEMU (used when testing in an emulator).
+- `variables.sh`: Script containing environment variables used by other scripts.
+- `list_defconfigs.sh`: Script to display available defconfigs for Buildroot.
+- `menuconfig.sh`: Script to run a GUI to display and edit current configuration.
 - `save_custom_defconfig.sh`: Script to save the current configuration as a custom defconfig.
 - `set_custom_defconfig.sh`: Script to set up a custom defconfig.
 - `set_default_defconfig.sh`: Script to set up the default defconfig.
-- `variables.sh`: Script containing environment variables used by other scripts.
+- `rebuild_and_install_external_package.sh`: Script to rebuild all external packages, and install in the build image.
+- `runqemu.sh`: Script to run the built system in QEMU (used when testing in an QEMU defconfig).
 
 ## Usage
 
@@ -66,7 +69,7 @@ To use this external repository with Buildroot:
 
    If you want a different default defconfig, you can search the available ones with the following command, and change `DEFAULT_DEFCONFIG_NAME` accordingly.
    ```bash
-   make -C buildroot/ list-defconfigs
+   ./list_defconfigs.sh
    ```
 
    Finally, to apply the default configuration, run this command:
@@ -91,7 +94,7 @@ To use this external repository with Buildroot:
 
 4. **Verify that Buildroot recognizes the external configuration**:
    ```bash
-   make -C buildroot/ list-defconfigs
+   ./list_defconfigs.sh
    ```
    Your custom configuration should appear in the **bottom**, under **"External configs in ROGER_TUTORIAL"**.
    
