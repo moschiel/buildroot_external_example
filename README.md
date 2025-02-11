@@ -20,7 +20,7 @@ Buildroot allows you to embed your own packages into a custom Linux image. Inste
 
 This repository includes:
 
-✅ Three external repositories with different applications ([morning](https://github.com/moschiel/good_morning_app_example), [afternoon](https://github.com/moschiel/good_afternoon_app_example), [night](https://github.com/moschiel/good_night_app_example)).
+✅ Four external repositories with different applications ([morning](https://github.com/moschiel/good_morning_app_example), [afternoon](https://github.com/moschiel/good_afternoon_app_example), [night](https://github.com/moschiel/good_night_app_example) and [simple_stream_server](https://github.com/moschiel/simple_stream_server)).
 
 ✅ Buildroot configuration to fetch and compile these applications automatically.
 
@@ -82,9 +82,11 @@ To use this external repository with Buildroot:
    
 3. **Customize the configuration and Save your own defconfig externally**:
    - Run `menuconfig.sh` to modify settings as needed.
-   - If you want to add our custom external packages (available in `extern/package`), select `External options`, then select our custom external packages,
+   - If you want to add our custom external packages (available in `extern/package`), select `External options`, then select our custom external packages.
      
-    ![image](https://github.com/user-attachments/assets/72e369d6-74f4-406f-aa10-ead340d83366)
+      Note: the external package `simple_stream_server` allows you to configure if its executable should initialize automatically on boot, and what should be its initialization priority.
+     
+    ![image](https://github.com/user-attachments/assets/4dcdce58-f617-4303-9213-804c85087f99)
 
    - Once changes are made, save them externally:
      ```bash
@@ -122,11 +124,13 @@ To use this external repository with Buildroot:
 
 
 ## Example Output
+After building the image and booting into the system you are able to test if everything went as expected.
 
-After building the image and booting into the system, you can run the applications by typing the executable names in the terminal:
+In this example, we have configured the executable `simple_stream_server` to **init automatically on boot**, that's why it shows the message `simple_stream_server started` on the boot sequence.
 
-![image](https://github.com/user-attachments/assets/e603d19e-ce47-4f7e-a0f8-dbcb57cad96d)
+Also, after login, you can run the executables `morning`, `afternoon` and `night` by typing their names in the terminal:
 
+![image](https://github.com/user-attachments/assets/6871dcb9-36fe-42e3-9bf9-4f887246cddb)
 
 This proves that the executables were correctly embedded into the Linux image!
 
