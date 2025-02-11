@@ -84,7 +84,7 @@ To use this external repository with Buildroot:
    - Run `menuconfig.sh` to modify settings as needed.
    - If you want to add our custom external packages (available in `extern/package`), select `External options`, then select our custom external packages.
      
-      Note: the external package `simple_stream_server` allows you to configure if its executable should initialize automatically on boot, and what should be its initialization priority.
+      Note: the external package `simple_stream_server` allows you to configure if its executable should **initialize automatically on boot**, and what should be its **initialization priority**.
      
     ![image](https://github.com/user-attachments/assets/4dcdce58-f617-4303-9213-804c85087f99)
 
