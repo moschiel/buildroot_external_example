@@ -13,12 +13,14 @@ define SIMPLE_STREAM_SERVER_BUILD_CMDS
 endef
 
 # @D is external repository directory,  TARGET_DIR is the rootfs directory (staging) that will be built for the target
+# Always install the binary so it can be executed from any directory
 define SIMPLE_STREAM_SERVER_INSTALL_TARGET_CMDS
     $(INSTALL) -m 0755 $(@D)/simple_stream_server $(TARGET_DIR)/usr/bin/
 endef
 
 # Function to Install the startup script as SXXsimple_stream_server, where XX is the init priority
 define SIMPLE_STREAM_SERVER_INSTALL_INIT_SCRIPT
+    $(RM) -f $(TARGET_DIR)/etc/init.d/S*simple_stream_server
     $(INSTALL) -m 0755 $(@D)/start-stop $(TARGET_DIR)/etc/init.d/S$(BR2_PACKAGE_SIMPLE_STREAM_SERVER_INIT_PRIORITY)simple_stream_server
 endef
 
